@@ -22,19 +22,20 @@ def buttons_message(event, line_bot_api):
         template=ButtonsTemplate(
             thumbnail_image_url=profile.picture_url,
             title=profile.display_name,
-            text='選択せよ',
+            text='こんにつは！',
             actions=[
                 PostbackAction(
-                    label='postback',
-                    display_text=f"User Id: {profile.user_id[:5]}...\n",
+                    label='User',
+                    display_text=f"User Id: {profile.user_id[:5]}...",
                     data='action = buy&itemid = 1'
                 ),
                 MessageAction(
-                    label='message',
-                    text='ここにメッセージが入る'
+                    label='ソース',
+                    text='https://github.com/furubese/Life2ou\n'\
+                         'これ:https://github.com/furubese/Life2ou/blob/master/mod/button_message.py'
                 ),
                 URIAction(
-                    label='uri',
+                    label='Hello_page(Test)',
                     uri='https://testcqlinehello.herokuapp.com/hello_page'
                 )
             ]
