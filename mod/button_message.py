@@ -26,7 +26,7 @@ def buttons_message(event, line_bot_api):
             actions=[
                 PostbackAction(
                     label='User',
-                    display_text=f"User Id: {profile.user_id[:5]}...",
+                    display_text=f"User Id: {profile.user_id}...",
                     data='action = buy&itemid = 1'
                 ),
                 MessageAction(
