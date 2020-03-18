@@ -5,7 +5,8 @@ def replay_message(event, line_bot_api):
     module = {
         "うんち": "rp_unchi",
         "ボタンの表示": "button_message",
-        "検索=": "energy"
+        "検索=": "energy",
+        "水のステータス見せて": "cq_status"
         }
 
     for m in module:
