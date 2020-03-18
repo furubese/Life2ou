@@ -4,7 +4,7 @@ def replay_message(event, line_bot_api):
     base = "pack.Life2ou.mod"
     module = {
         "うんち": "rp_unchi",
-        "ボタンの表示": "button_message"
+        "ボタンの表示": "button_message",
         "検索=": "energy"
         }
 
