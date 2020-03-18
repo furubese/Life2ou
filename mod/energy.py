@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-"""
 from linebot import (
     LineBotApi, WebhookHandler
 )
@@ -13,7 +12,6 @@ from linebot.models import (
     MessageAction, URIAction, PostbackAction,
 
 )
-"""
 from bs4 import BeautifulSoup
 import urllib.request
 import urllib.parse
