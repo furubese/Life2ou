@@ -43,4 +43,5 @@ def status(server, num):
 
 
 def main(event,line_bot_api)
-    print(status("mars", "water01")[1])
+    #print(status("mars", "water01")[1])
+    pass

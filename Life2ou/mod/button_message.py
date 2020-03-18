@@ -18,7 +18,7 @@ from linebot.models import (
 def buttons_message(event, line_bot_api):
     profile = line_bot_api.get_profile(event.source.user_id)
     buttons_template_massage = TemplateSendMessage(
-        alt_text='ボタンテンプレート',
+        alt_text='デフォルトボタン',
         template=ButtonsTemplate(
             thumbnail_image_url=profile.picture_url,
             title=profile.display_name,
@@ -31,12 +31,13 @@ def buttons_message(event, line_bot_api):
                 ),
                 MessageAction(
                     label='ソース',
-                    text='https://github.com/furubese/Life2ou\n'\
-                         'これ:https://github.com/furubese/Life2ou/blob/master/mod/button_message.py'
+                    text='https://github.com/furubese/Life2ou/tree/master/Life2ou\n'\
+                         '【MODS】\n'\
+                         'https://github.com/furubese/Life2ou/tree/master/Life2ou/mod'
                 ),
                 URIAction(
-                    label='Hello_page(Test)',
-                    uri='https://testcqlinehello.herokuapp.com/hello_page'
+                    label='これのソースURL',
+                    uri='https://github.com/furubese/Life2ou/blob/master/Life2ou/mod/button_message.py'
                 )
             ]
         )
