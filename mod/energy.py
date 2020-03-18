@@ -47,9 +47,7 @@ def amazones_serch(word, vol):
         e = ["er", "検索に一致する商品はありませんでした"]
         return e
 
-    if len(rs_picture[0]) == 1:
-        vol = 1
-    elif len(rs_picture) < vol:
+    if len(rs_picture) < vol:
         vol = len(rs_picture)
     
     product=[]
@@ -77,6 +75,7 @@ def amazones_atach(event, line_bot_api, word):
         line_print(event, line_bot_api, res[1])
         return 1
     ans = ""
+    
     i = 0
     while i < len(res):
         ans += res[i]["name"] + "\n" +\
