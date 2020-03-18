@@ -36,7 +36,7 @@ def amazones_serch(word, vol):
     try:
         html = urllib.request.urlopen(url)
     except urllib.error.HTTPError as e:
-        e = ["e", e]
+        e = ["er", e]
         return e
 
     soup = BeautifulSoup(html, "html.parser")
@@ -44,13 +44,13 @@ def amazones_serch(word, vol):
     rs_picture= soup.select('img.s-image')
 
     if not rs_picture:
-        e = ["e", "検索に一致する商品はありませんでした"]
+        e = ["er", "検索に一致する商品はありませんでした"]
         return e
 
-    if len(rs_picture) > vol:
+    if len(rs_picture[0]) == 1:
         vol = 1
     elif len(rs_picture) < vol:
-        vol = rs_picture
+        vol = len(rs_picture)
     
     product=[]
     for i in range(vol):
@@ -73,15 +73,18 @@ def amazones_atach(event, line_bot_api, word):
         line_print(event, line_bot_api, e)
         
     res = amazones_serch(word, vol)
-    if res[0] == "e":
+    if res[0] == "er":
         line_print(event, line_bot_api, res[1])
         return 1
     ans = ""
-    for i in range(vol):
+    i = 0
+    while i < len(res):
         ans += res[i]["name"] + "\n" +\
               res[i]["price"] + "\n" +\
               res[i]["picture"]
         ans += "\n"
+        i += 1
+    
     ans = ans[:-1]
     
     line_print(event, line_bot_api, ans)
