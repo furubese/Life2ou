@@ -68,11 +68,11 @@ def amazones_atach(event, line_bot_api, word):
         if vol > 5:
             line_print(event, line_bot_api, "max=5")
     except ValueError as e:
-        line_print(event, line_bot_api, e)
+        line_print(event, line_bot_api, str(e))
         
     res = amazones_serch(word, vol)
     if res[0] == "er":
-        line_print(event, line_bot_api, res[1])
+        line_print(event, line_bot_api, str(res[1]))
         return 1
     ans = ""
     
